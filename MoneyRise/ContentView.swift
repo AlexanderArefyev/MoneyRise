@@ -8,14 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var balance = 0
+    @State var amountNew = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            VStack{
+                Text("\(balance)")
+                    .font(.system(size: 30, weight: .semibold))
+                    .padding(.bottom, 50)
+                Text("Введите и нажмите ОК, чтобы добавить. Для того, чтобы внести расход введите число с минусом.")
+                    .font(.body)
+                    .foregroundColor(.gray)
+                    .multilineTextAlignment(.center)
+                    .opacity(0.6)
+                    .padding(.horizontal, 50)
+            }
+            .padding(.bottom, 50)
+            .padding(.top, 160)
+            HStack {
+                TextField("Введите..", text: $amountNew)
+                    .textFieldStyle(.roundedBorder)
+                    .font(.system(size: 24))
+                    .keyboardType(.numberPad)
+                    .padding(.trailing, 15)
+                Button(action: {
+                    // Дейсвие
+                }, label: {
+                    Text("OK")
+                        .font(.headline)
+                        .frame(width: 40, height: 35)
+                        .foregroundColor(Color.white)
+                        .background(Color.blue)
+                        .cornerRadius(4)
+                        .shadow(color: Color.blue.opacity(0.3), radius: 7, x: 0, y: 3)
+                })
+            }
+            .padding(.horizontal, 40)
+            Spacer()
         }
-        .padding()
     }
 }
 
