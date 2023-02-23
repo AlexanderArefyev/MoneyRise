@@ -52,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				9E05F9EC29A124E900D48FDF /* MoneyRiseApp.swift */,
-				9E05F9EE29A124E900D48FDF /* ContentView.swift */,
+				9EED8A6929A7DFA40014A20D /* Views */,
 				9E05F9F029A124EB00D48FDF /* Assets.xcassets */,
 				9E05F9F229A124EB00D48FDF /* Preview Content */,
 			);
@@ -65,6 +65,14 @@
 				9E05F9F329A124EB00D48FDF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9EED8A6929A7DFA40014A20D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9E05F9EE29A124E900D48FDF /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

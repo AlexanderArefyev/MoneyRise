@@ -11,6 +11,7 @@ struct ContentView: View {
     
     @State private var balance = 0
     @State var amountNew = ""
+    @State var showAlert = false
     
     var body: some View {
         VStack {
@@ -34,7 +35,7 @@ struct ContentView: View {
                     .keyboardType(.numberPad)
                     .padding(.trailing, 15)
                 Button(action: {
-                    // Дейсвие
+                    balance_update()
                 }, label: {
                     Text("OK")
                         .font(.headline)
@@ -47,6 +48,14 @@ struct ContentView: View {
             }
             .padding(.horizontal, 40)
             Spacer()
+        }
+    }
+    func balance_update() {
+        if amountNew.isEmpty {
+            amountNew = "Пусто..."
+        } else {
+            balance += Int(amountNew)!
+            amountNew = ""
         }
     }
 }
